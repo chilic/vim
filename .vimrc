@@ -38,7 +38,7 @@
 
     " Extra plugins {
         if filereadable(expand("~/.plugins.vimrc"))
-            source ~/.vimrc.plugins
+            source ~/.plugins.vimrc
         endif
     " }
 
