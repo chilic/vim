@@ -1,4 +1,3 @@
-
 " Environment {
     " Identify platform {
         silent function! OSX()
@@ -28,19 +27,25 @@
     " }
 " }
 
-call plug#begin()
 
-" List your plugins here
+" Default plugins {
 
-" ColorScheme
-Plug 'crusoexia/vim-monokai'
-Plug 'phanviet/vim-monokai-pro'
-Plug 'joshdick/onedark.vim'
+    call plug#begin()
 
-call plug#end()
+    " Color scheme {
+        Plug 'crusoexia/vim-monokai'
+    " }
+
+    " Extra plugins {
+        if filereadable(expand("~/.vimrc.plugins"))
+            source ~/.vimrc.plugins
+        endif
+    " }
+
+    call plug#end()
+" }
 
 " General {
-
     set background=dark         " Assume a dark background
 
     " Allow to trigger background
@@ -97,7 +102,6 @@ call plug#end()
         exe 'set directory=' . data_dir . '/swp'
         exe 'set undodir=' . data_dir . '/undo'
     " }
-
 " }
 
 
@@ -155,11 +159,9 @@ call plug#end()
     set foldenable                  " Auto fold code
     set list
     set listchars=tab:›\ ,trail:•,extends:#,nbsp:. " Highlight problematic whitespaces
-
 " }
 
 " Formatting {
-
     set nowrap                      " Do not wrap long lines
     set autoindent                  " Indent at the same level of the previous line
     set shiftwidth=4                " Use indents of 4 spaces
