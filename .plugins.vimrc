@@ -15,4 +15,5 @@ let g:deoplete#enable_at_startup = 1
 " Programming
 Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+Plug 'bfrg/vim-c-cpp-modern'
 
