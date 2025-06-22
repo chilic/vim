@@ -29,7 +29,6 @@
 
 
 " Default plugins {
-
     call plug#begin()
 
     " Color scheme {
@@ -179,7 +178,6 @@
     autocmd BufWritePre * :call StripTrailingWhitespace()
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
     autocmd FileType ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
-
 " }
 
 " Functions {
@@ -197,3 +195,4 @@
     endfunction
     " }
 " }
+
