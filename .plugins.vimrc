@@ -10,6 +10,7 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
 let g:deoplete#enable_at_startup = 1
 
 " Programming
