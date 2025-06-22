@@ -1,7 +1,7 @@
 " Editing
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive'
 
 " ColorScheme
 Plug 'phanviet/vim-monokai-pro'
