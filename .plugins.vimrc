@@ -2,6 +2,7 @@
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 
 " ColorScheme
 Plug 'phanviet/vim-monokai-pro'
