@@ -23,3 +23,17 @@ let g:deoplete#enable_at_startup = 1
 Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'bfrg/vim-c-cpp-modern'
+
+" Config
+" NerdTree {
+    if isdirectory(expand("~/.vim/bundle/nerdtree"))
+        map <C-e> <plug>NERDTreeTabsToggle<CR>
+        map <leader>e :NERDTreeToggle<CR>
+        nmap <leader>nt :NERDTreeFind<CR>
+
+        let NERDTreeWinSize = 40
+        let NERDTreeMinimalUI = 1
+        let NERDTreeIgnore=['\.DS_Store', '\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$', '^\.vscode', '^__pycache__$']
+        let NERDTreeShowHidden=1
+    endif
+" }
