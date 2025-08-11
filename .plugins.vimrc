@@ -26,7 +26,7 @@ Plug 'bfrg/vim-c-cpp-modern'
 
 " Config
 " NerdTree {
-    if isdirectory(expand("~/.vim/bundle/nerdtree"))
+    if isdirectory(plugged_dir . 'nerdtree')
         map <C-e> <plug>NERDTreeTabsToggle<CR>
         map <leader>e :NERDTreeToggle<CR>
         nmap <leader>nt :NERDTreeFind<CR>

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#
 
 ############################  SETUP PARAMETERS
 [ -z "$APP_PATH" ] && APP_PATH="$HOME/.chilic-vim"
