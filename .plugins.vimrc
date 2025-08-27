@@ -17,7 +17,6 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-let g:deoplete#enable_at_startup = 1
 
 " Programming
 Plug 'rust-lang/rust.vim'
@@ -35,5 +34,11 @@ Plug 'bfrg/vim-c-cpp-modern'
         let NERDTreeMinimalUI = 1
         let NERDTreeIgnore=['\.DS_Store', '\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$', '^\.vscode', '^__pycache__$']
         let NERDTreeShowHidden=1
+    endif
+" }
+"
+" Deoplete.nvim {
+    if isdirectory(plugged_dir . '/deoplete.nvim')
+        let g:deoplete#enable_at_startup = 1
     endif
 " }
