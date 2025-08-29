@@ -17,7 +17,6 @@ else
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
 Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
-Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
 " Programming
 Plug 'rust-lang/rust.vim'
@@ -43,3 +42,18 @@ Plug 'bfrg/vim-c-cpp-modern'
         let g:deoplete#enable_at_startup = 1
     endif
 " }
+
+" vim-go {
+    if isdirectory(plugged_dir . '/vim-go')
+        let g:go_def_mode='gopls'
+        let g:go_info_mode='gopls'
+
+        " Launch gopls when Go files are in use
+        let g:LanguageClient_serverCommands = {
+               \ 'go': ['gopls']
+               \ }
+        " Run gofmt on save
+        autocmd BufWritePre *.go :call LanguageClient#textDocument_formatting_sync()
+    endif
+" }
+
