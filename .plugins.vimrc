@@ -16,8 +16,8 @@ else
   Plug 'roxma/nvim-yarp'
   Plug 'roxma/vim-hug-neovim-rpc'
 endif
-Plug 'deoplete-plugins/deoplete-go', { 'do': 'make'}
-Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh'
+Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
+Plug 'stamblerre/gocode', { 'rtp': 'nvim', 'do': '~/.config/nvim/plugged/gocode/nvim/symlink.sh' }
 
 " Programming
 Plug 'rust-lang/rust.vim'
