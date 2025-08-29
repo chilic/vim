@@ -36,7 +36,7 @@ Plug 'bfrg/vim-c-cpp-modern'
         let NERDTreeShowHidden=1
     endif
 " }
-"
+
 " Deoplete.nvim {
     if isdirectory(plugged_dir . '/deoplete.nvim')
         let g:deoplete#enable_at_startup = 1
