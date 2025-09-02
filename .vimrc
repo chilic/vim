@@ -29,21 +29,6 @@
 " }
 
 
-" Default plugins {
-    call plug#begin()
-
-    " Color scheme {
-        Plug 'crusoexia/vim-monokai'
-    " }
-
-    " Extra plugins {
-        if filereadable(expand("~/.plugins.vimrc"))
-            source ~/.plugins.vimrc
-        endif
-    " }
-
-    call plug#end()
-" }
 
 " General {
     set background=dark         " Assume a dark background
@@ -104,6 +89,20 @@
     " }
 " }
 
+
+" Plugins {
+    call plug#begin()
+    " Default plugins {
+        Plug 'crusoexia/vim-monokai' " Color scheme
+    " }
+
+    " Extra plugins {
+        if filereadable(expand("~/.plugins.vimrc"))
+            source ~/.plugins.vimrc
+        endif
+    " }
+    call plug#end()
+" }
 
 " Vim UI {
     set termguicolors
@@ -175,7 +174,6 @@
     "set pastetoggle=<F12>           " pastetoggle (sane indentation on pastes)
     set comments=sl:/*,mb:*,elx:*/  " auto format comment blocks
 
-    " autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,sql autocmd BufWritePre <buffer> StripTrailingWhitespace()
     autocmd BufWritePre * :call StripTrailingWhitespace()
     autocmd BufNewFile,BufRead *.html.twig set filetype=html.twig
     autocmd FileType ruby,yml setlocal expandtab shiftwidth=2 softtabstop=2
@@ -196,3 +194,4 @@
     endfunction
     " }
 " }
+

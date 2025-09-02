@@ -3,6 +3,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-fugitive'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'preservim/tagbar'
 
 " ColorScheme
 Plug 'phanviet/vim-monokai-pro'
@@ -23,8 +24,10 @@ Plug 'rust-lang/rust.vim'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'bfrg/vim-c-cpp-modern'
 
+
 " Config
-" NerdTree {
+
+" nerdTree {
     if isdirectory(plugged_dir . '/nerdtree')
         map <C-e> <plug>NERDTreeTabsToggle<CR>
         map <leader>e :NERDTreeToggle<CR>
@@ -37,15 +40,17 @@ Plug 'bfrg/vim-c-cpp-modern'
     endif
 " }
 
-" Deoplete.nvim {
+" vim-go {
+    if isdirectory(plugged_dir . '/vim-go')
+        "call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+        autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+    endif
+" }
+
+" deoplete.nvim {
     if isdirectory(plugged_dir . '/deoplete.nvim')
         let g:deoplete#enable_at_startup = 1
     endif
 " }
 
-" vim-go {
-    if isdirectory(plugged_dir . '/vim-go')
-        call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
-    endif
-" }
 
