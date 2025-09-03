@@ -28,7 +28,45 @@
     " }
 " }
 
+" Plugins {
+    call plug#begin()
+    " Default plugins {
+        Plug 'crusoexia/vim-monokai' " Color scheme
+    " }
 
+    " Extra plugins {
+        " Editing {
+            Plug 'scrooloose/nerdtree'
+            Plug 'scrooloose/nerdcommenter'
+            Plug 'tpope/vim-fugitive'
+            Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+            Plug 'preservim/tagbar'
+        " }
+
+        " ColorScheme {
+            Plug 'phanviet/vim-monokai-pro'
+            Plug 'joshdick/onedark.vim'
+        " }
+
+        " Autocomplete {
+            if has('nvim')
+                Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+            else
+                Plug 'Shougo/deoplete.nvim'
+                Plug 'roxma/nvim-yarp'
+                Plug 'roxma/vim-hug-neovim-rpc'
+            endif
+            Plug 'deoplete-plugins/deoplete-go', { 'do': 'make' }
+        " }
+
+        " Programming {
+            Plug 'rust-lang/rust.vim'
+            Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
+            Plug 'bfrg/vim-c-cpp-modern'
+        " }
+    " }
+    call plug#end()
+" }
 
 " General {
     set background=dark         " Assume a dark background
@@ -87,21 +125,6 @@
         exe 'set directory=' . data_dir . '/swp'
         exe 'set undodir=' . data_dir . '/undo'
     " }
-" }
-
-
-" Plugins {
-    call plug#begin()
-    " Default plugins {
-        Plug 'crusoexia/vim-monokai' " Color scheme
-    " }
-
-    " Extra plugins {
-        if filereadable(expand("~/.plugins.vimrc"))
-            source ~/.plugins.vimrc
-        endif
-    " }
-    call plug#end()
 " }
 
 " Vim UI {
@@ -195,3 +218,31 @@
     " }
 " }
 
+" Plguins config {
+    " nerdTree {
+        if isdirectory(plugged_dir . '/nerdtree')
+            map <C-e> <plug>NERDTreeTabsToggle<CR>
+            map <leader>e :NERDTreeToggle<CR>
+            nmap <leader>nt :NERDTreeFind<CR>
+
+            let NERDTreeWinSize = 40
+            let NERDTreeMinimalUI = 1
+            let NERDTreeIgnore=['\.DS_Store', '\.py[cd]$', '\~$', '\.swo$', '\.swp$', '^\.git$', '^\.hg$', '^\.svn$', '\.bzr$', '^\.vscode', '^__pycache__$']
+            let NERDTreeShowHidden=1
+        endif
+    " }
+
+    " vim-go {
+        if isdirectory(plugged_dir . '/vim-go')
+            call deoplete#custom#option('omni_patterns', { 'go': '[^. *\t]\.\w*' })
+            autocmd BufNewFile,BufRead *.go setlocal noexpandtab tabstop=4 shiftwidth=4
+        endif
+    " }
+
+    " deoplete.nvim {
+        if isdirectory(plugged_dir . '/deoplete.nvim')
+            let g:deoplete#enable_at_startup = 1
+            let g:deoplete#auto_complete = 1
+        endif
+    " }
+" }
